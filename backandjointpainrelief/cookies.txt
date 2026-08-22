@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+images.pexels.com	TRUE	/	FALSE	1999999999	_cfuvid	ecOD5qs0bNpWfB2A8vblP9Ar61Hi2263TKH0EzmTVow-1787391351.0384905-1.0.1.1-aBVeLWTG47MdL6JlC3C9WrTg5sBlP5LHIJB.FhMkHYg
+images.pexels.com	TRUE	/	FALSE	1999999999	__cf_bm	nNIGJQa.MoL34PpHb2_seDASbef_T0uaTNazkl_FgsU-1787399511.1140485-1.0.1.1-89OTHVQeBc30AsNf6cswsmTABzZdLZ85bVPLY.owW_mz4oP2UXvnAnj06mKB5mzVK9u2BGx2Gn9ytWTTRYKZPfzDoSR5f36pOep.bxIoSnwrcArND2hfheazBtOeo5J2
+pexels.com	TRUE	/	FALSE	1999999999	SameSite	None
+
