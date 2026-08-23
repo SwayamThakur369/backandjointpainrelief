@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{TITLE}}</title>
+  
+  <!-- Premium Fonts pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Icons (FontAwesome used by the theme) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#ffdad6",
+            "surface-tint": "#4059ae",
+            "on-background": "#111c2d",
+            "secondary-fixed": "#78fc9c",
+            "inverse-primary": "#b6c4ff",
+            "surface-container": "#e7eeff",
+            "on-error": "#ffffff",
+            "primary-container": "#2b459a",
+            "inverse-on-surface": "#ecf1ff",
+            "on-tertiary-container": "#ffa49c",
+            "on-primary-container": "#a8b9ff",
+            "background": "#f9f9ff",
+            "clinical-blue-light": "#EFF6FF",
+            "primary-fixed": "#dce1ff",
+            "on-error-container": "#93000a",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#5adf82",
+            "surface": "#f9f9ff",
+            "surface-container-highest": "#d8e3fb",
+            "error-container": "#ffdad6",
+            "tertiary": "#71000a",
+            "primary-fixed-dim": "#b6c4ff",
+            "surface-container-low": "#f0f3ff",
+            "surface-border": "#E2E8F0",
+            "on-surface": "#111c2d",
+            "inverse-surface": "#263143",
+            "on-primary-fixed": "#001550",
+            "on-primary-fixed-variant": "#254095",
+            "outline": "#757683",
+            "secondary-container": "#75f999",
+            "on-tertiary-fixed-variant": "#930010",
+            "tertiary-container": "#9c0012",
+            "on-secondary-fixed-variant": "#005225",
+            "error-red-light": "#FEE2E2",
+            "secondary": "#006d33",
+            "error": "#ba1a1a",
+            "surface-container-high": "#dee8ff",
+            "on-primary": "#ffffff",
+            "surface-variant": "#d8e3fb",
+            "surface-dim": "#cfdaf2",
+            "on-secondary-container": "#007236",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#0c2c82",
+            "on-tertiary-fixed": "#410003",
+            "surface-bright": "#f9f9ff",
+            "tertiary-fixed-dim": "#ffb3ac",
+            "outline-variant": "#c5c5d3",
+            "success-green-light": "#DCFCE7",
+            "surface-muted": "#F8FAFC",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#444652",
+            "on-secondary-fixed": "#00210b"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "component-gap": "1.5rem",
+            "section-gap": "6rem",
+            "margin-desktop": "5rem"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "caption": ["Inter"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Global Premium Stylesheet -->
+  <link rel="stylesheet" href="{{PREFIX}}assets/css/theme.css" />
+  
+  <!-- Reviews Widget Assets -->
+  <link rel="stylesheet" id="grw-public-main-css-css" href="{{PREFIX}}wp-content/plugins/widget-google-reviews/assets/6.9.11/css/public-main.css" media="all" />
+  
+  {{EXTRA_HEAD}}
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+
+  <!-- Shared Premium Header -->
+  <header class="sticky top-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface-container-lowest/80 backdrop-blur-md border-b border-surface-border">
+    <a href="{{PREFIX}}index.html" class="flex items-center gap-3">
+        <img src="{{PREFIX}}wp-content/uploads/2025/09/Paradkar-1.jpg" alt="Logo" class="h-10 w-auto object-contain" />
+        <span class="font-display-lg-mobile text-primary font-bold tracking-tight">Dr. Paradkar's Ortho Cure</span>
+    </a>
+    <nav class="hidden md:flex gap-8 items-center">
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="{{PREFIX}}index.html">Home</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="{{PREFIX}}about/index.html">About</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="{{PREFIX}}services/index.html">Services</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="{{PREFIX}}gallery/index.html">Gallery</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="{{PREFIX}}contact/index.html">Contact</a>
+    </nav>
+    <a href="{{PREFIX}}contact/index.html" class="hidden md:flex bg-tertiary text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full hover:bg-tertiary-container transition-colors shadow-md">
+        Book Now
+    </a>
+    <button class="md:hidden text-primary" onclick="window.location.href='{{PREFIX}}contact/index.html'">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </header>
+
+  <!-- Page Content Placeholder -->
+  <main id="primary" class="site-main">
+    {{CONTENT}}
+  </main>
+
+  <!-- Shared Premium Footer -->
+  <footer class="clinic-footer">
+    <div class="container footer-grid">
+      <div class="footer-info" style="display: flex; flex-direction: column; gap: 1rem;">
+        <img src="{{PREFIX}}wp-content/uploads/2025/09/Paradkar-1.jpg" alt="Dr. Paradkar Clinic Logo" style="max-width: 280px; height: auto; border-radius: 4px;" />
+        <p class="footer-description" style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #cbd5e1;">Dr. Parag C Paradkar is an Internationally Trained Orthopedic doctor and Orthopedic Pain Management Specialist with 15+ years of global patient care experience, having successful treated more than 25000 patients in INDIA, OMAN & CANADA.</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #cbd5e1;">© 2026 Dr. Paradkar’s Ortho Cure. All rights reserved. Precision Care in Bavdhan, Kothrud, Satara &amp; Lonand. | Powered by <a href="https://kaalvion.com" target="_blank" style="display: inline-block; vertical-align: middle;"><img src="{{PREFIX}}wp-content/uploads/2025/09/kaalvion_logo.png" alt="Kaalvion" style="height: 16px; width: auto; vertical-align: middle; margin-left: 4px;" /></a></p>
+      </div>
+      
+      <div>
+        <h3 class="footer-heading">Useful Links</h3>
+        <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="{{PREFIX}}index.html" style="color: #cbd5e1; text-decoration: none;">Home</a></li>
+          <li><a href="{{PREFIX}}about/index.html" style="color: #cbd5e1; text-decoration: none;">About Us</a></li>
+          <li><a href="{{PREFIX}}services/index.html" style="color: #cbd5e1; text-decoration: none;">Services</a></li>
+          <li><a href="{{PREFIX}}contact/index.html" style="color: #cbd5e1; text-decoration: none;">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="footer-heading">Contact Us</h3>
+        <div class="footer-contact-item" style="margin-bottom: 15px; display: flex; gap: 10px;">
+          <span class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+          <div class="footer-contact-details">
+            <span class="footer-contact-title" style="font-weight: bold; color: white;">Bavdhan Clinic:</span><br/>
+            Sushila Rowhouse, Tri Murti Chowk,<br/>
+            Behind Amrale Dairy, Near Maratha Mandir,<br/>
+            Bavdhan, Pune, Maharashtra 411021
+          </div>
+        </div>
+        <div class="footer-contact-item" style="margin-bottom: 15px; display: flex; gap: 10px;">
+          <span class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+          <div class="footer-contact-details">
+            <span class="footer-contact-title" style="font-weight: bold; color: white;">Kothrud Clinic:</span><br/>
+            Kumbare Township, Ground,<br/>
+            Sangeetkar Shrikant Thakare Rd, Near Ashish Garden,<br/>
+            Maurya Vihar, Kothrud, Pune, Maharashtra 411038
+          </div>
+        </div>
+        <div class="footer-contact-item" style="margin-bottom: 15px; display: flex; gap: 10px;">
+          <span class="footer-contact-icon"><i class="fas fa-phone-alt"></i></span>
+          <div class="footer-contact-details">
+            <span class="footer-contact-title" style="font-weight: bold; color: white;">Phone Call / Booking:</span><br/>
+            8237073397 - Bavdhan<br/>
+            9356576087 - Kothrud
+          </div>
+        </div>
+        <div class="footer-contact-item" style="display: flex; gap: 10px;">
+          <span class="footer-contact-icon"><i class="fas fa-envelope"></i></span>
+          <div class="footer-contact-details">
+            <span class="footer-contact-title" style="font-weight: bold; color: white;">Email Address:</span><br/>
+            paragortho81@gmail.com
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      Dr. Paradkar’s Ortho Cure & Pain Relief Clinic - Modern Design Enhancement
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{PREFIX}}wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1"></script>
+  <script defer="defer" src="{{PREFIX}}wp-content/plugins/widget-google-reviews/assets/6.9.11/js/public-main.js"></script>
+  
+  {{EXTRA_SCRIPTS}}
+</body>
+</html>
