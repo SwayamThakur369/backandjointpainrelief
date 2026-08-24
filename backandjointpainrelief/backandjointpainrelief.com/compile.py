@@ -97,7 +97,7 @@ def extract_condition_details(main_soup):
     return title, paragraphs, images, videos
 
 def rebuild_service_page(title, paragraphs, images, videos, prefix):
-    """Generates standard premium layout for service pages."""
+    """Generates standard premium layout for service pages with proper headings."""
     html_content = f"""
     <div class="section hero-slider" style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); padding: 40px 0; color: white; text-align: center;">
       <div class="container">
@@ -112,17 +112,43 @@ def rebuild_service_page(title, paragraphs, images, videos, prefix):
           <h2 style="margin-top: 0; font-size: 1.75rem; margin-bottom: 20px;">Condition & Treatment Overview</h2>
     """
     
-    # Add paragraphs
+    # Filter out empty or duplicate headings/paragraphs
+    clean_paragraphs = []
     for p in paragraphs:
-        if p.find(["h1", "h2", "h3", "h4", "h5", "h6"]):
-            heading_el = p.find(["h1", "h2", "h3", "h4", "h5", "h6"])
-            p_str = f'<h3 class="text-xl font-bold text-primary mt-6 mb-3">{heading_el.get_text(strip=True)}</h3>'
-        else:
-            p_str = f'<p class="mb-4 text-on-surface-variant text-base leading-relaxed">{p.get_text(strip=True)}</p>'
-        
+        txt = p.get_text(strip=True)
+        # Skip if it is a heading that we are going to add manually anyway
+        if txt.lower() in ["condition & treatment overview", "treatment process & what to expect", "conclusion", "why choose our non surgical orthopedic doctor?"]:
+            continue
+        clean_paragraphs.append(txt)
+
+    num_paras = len(clean_paragraphs)
+    
+    for idx, txt in enumerate(clean_paragraphs):
+        p_str = f'<p class="mb-4 text-on-surface-variant text-base leading-relaxed">{txt}</p>'
         p_str = p_str.replace("https://backandjointpainrelief.com/", prefix)
-        html_content += f"      {p_str}\n"
         
+        # Inject headings at standard logical transitions
+        if num_paras >= 8:
+            # 10 paragraphs standard structure
+            if idx == 2:
+                heading = f"BENEFITS OF {title.upper()}"
+                html_content += f'          <h3 class="text-xl font-bold text-primary mt-6 mb-3">{heading}</h3>\n'
+            elif idx == 4:
+                html_content += f'          <h3 class="text-xl font-bold text-primary mt-6 mb-3">Why Choose Our Non Surgical Orthopedic Doctor?</h3>\n'
+            elif idx == 6:
+                html_content += f'          <h3 class="text-xl font-bold text-primary mt-6 mb-3">Treatment Process & What to Expect</h3>\n'
+            elif idx == 8:
+                html_content += f'          <h3 class="text-xl font-bold text-primary mt-6 mb-3">Conclusion</h3>\n'
+        elif num_paras >= 4:
+            # Fewer paragraphs
+            if idx == 2:
+                heading = f"BENEFITS OF {title.upper()}"
+                html_content += f'          <h3 class="text-xl font-bold text-primary mt-6 mb-3">{heading}</h3>\n'
+            elif idx == 3:
+                html_content += f'          <h3 class="text-xl font-bold text-primary mt-6 mb-3">Why Choose Our Non Surgical Orthopedic Doctor?</h3>\n'
+                
+        html_content += f"          {p_str}\n"
+
     html_content += """
         </div>
         
