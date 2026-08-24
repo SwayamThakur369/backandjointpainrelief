@@ -158,11 +158,13 @@ def rebuild_service_page(title, paragraphs, images, videos, prefix):
     # Add Video Card
     if videos:
         vid_src = videos[0].get("src", "")
+        if vid_src.startswith("http://"):
+            vid_src = vid_src.replace("http://", "https://")
         html_content += f"""
           <div class="card" style="padding: 15px;">
             <h3 style="margin-top: 0; font-size: 1.25rem; margin-bottom: 15px;"><i class="fas fa-video" style="color: var(--color-accent); margin-right: 8px;"></i>Condition Video</h3>
             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--color-border);">
-              <iframe src="{vid_src}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+              <iframe src="{vid_src}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         """

@@ -179,13 +179,44 @@
   </header>
 
   <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-50 bg-surface-container-lowest flex flex-col pt-20 px-6 gap-6">
+  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-50 bg-surface-container-lowest flex flex-col pt-20 px-6 gap-6 overflow-y-auto pb-10">
       <button class="absolute top-4 right-6 text-primary" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
           <span class="material-symbols-outlined text-3xl">close</span>
       </button>
       <a class="font-headline-md text-primary" href="../index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
       <a class="font-headline-md text-primary" href="../about/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
-      <a class="font-headline-md text-primary" href="../services/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+      
+      <!-- Mobile Services Accordion -->
+      <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center cursor-pointer py-1" onclick="document.getElementById('mobile-services-list').classList.toggle('hidden'); document.getElementById('arrow-services').classList.toggle('rotate-180')">
+              <span class="font-headline-md text-primary">Services</span>
+              <span id="arrow-services" class="material-symbols-outlined text-primary transition-transform duration-200">keyboard_arrow_down</span>
+          </div>
+          <div id="mobile-services-list" class="hidden flex flex-col pl-4 gap-2 border-l border-surface-border">
+              <a class="text-sm font-semibold text-primary py-1" href="../services/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">All Services Overview</a>
+              
+              <span class="text-xs font-bold text-primary tracking-wider uppercase mt-2">Spine & Pain Relief</span>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../lumbar-epidural-injection/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Lumbar Epidural</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../caudal-epidural-injections/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Caudal Epidural</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../facet-joints-intra-articular-injections/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Facet Joint Injections</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../sacro-illiac-joint-injections/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">SI Joint Injections</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../selective-nerve-root-blocks/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Nerve Root Blocks</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../trigger-points/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Trigger Points</a>
+              
+              <span class="text-xs font-bold text-primary tracking-wider uppercase mt-2">Joints & Extremities</span>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../intra-articular-injections/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Intra-articular Injections</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../visco-durolene-synvisc-monovisc-prp-injections/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Visco & PRP Injections</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../tennis-elbow/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tennis Elbow</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../golfers-elbow/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Golfers' Elbow</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../trigger-finger/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Trigger Finger</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../frozen-shoulder/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Frozen Shoulder</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../rotator-cuff-tendinopathy/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Rotator Cuff</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../plantar-fasciitis/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Plantar Fasciitis</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../carpal-tunnel-syndrome/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Carpal Tunnel</a>
+              <a class="text-xs text-on-surface-variant hover:text-primary py-0.5" href="../plaster-application/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Plaster / Splints / Casts</a>
+          </div>
+      </div>
+      
       <a class="font-headline-md text-primary" href="../gallery/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Gallery</a>
       <a class="font-headline-md text-primary" href="../contact/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
   </div>
@@ -226,7 +257,7 @@
           <div class="card" style="padding: 15px;">
             <h3 style="margin-top: 0; font-size: 1.25rem; margin-bottom: 15px;"><i class="fas fa-video" style="color: var(--color-accent); margin-right: 8px;"></i>Condition Video</h3>
             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--color-border);">
-              <iframe src="http://www.youtube.com/embed/lztU0X08OYM?&autoplay=0&mute=0&loop=0&playlist=lztU0X08OYM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/lztU0X08OYM?&autoplay=0&mute=0&loop=0&playlist=lztU0X08OYM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         
