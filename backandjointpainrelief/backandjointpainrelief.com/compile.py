@@ -106,9 +106,9 @@ def rebuild_service_page(title, paragraphs, images, videos, prefix):
       </div>
     </div>
     
-    <div class="section container">
-      <div class="grid grid-2">
-        <div class="service-details-column">
+    <div class="section container mx-auto px-margin-mobile md:px-margin-desktop py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="service-details-column lg:col-span-7 order-2 lg:order-1">
           <h2 style="margin-top: 0; font-size: 1.75rem; margin-bottom: 20px;">Condition & Treatment Overview</h2>
     """
     
@@ -126,7 +126,7 @@ def rebuild_service_page(title, paragraphs, images, videos, prefix):
     html_content += """
         </div>
         
-        <div class="service-media-column" style="display: flex; flex-direction: column; gap: 30px;">
+        <div class="service-media-column lg:col-span-5 order-1 lg:order-2" style="display: flex; flex-direction: column; gap: 30px;">
     """
     
     # Add Video Card

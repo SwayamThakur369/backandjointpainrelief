@@ -128,23 +128,67 @@
   <!-- Shared Premium Header -->
   <header class="sticky top-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface-container-lowest/80 backdrop-blur-md border-b border-surface-border">
     <a href="../index.html" class="flex items-center gap-3">
-        <img src="../wp-content/uploads/2025/09/Paradkar-1.jpg" alt="Logo" class="h-10 w-auto object-contain" />
+        <img src="../wp-content/uploads/2025/09/Paradkar-1.png" alt="Logo" class="h-20 w-auto object-contain" />
         <span class="font-display-lg-mobile text-primary font-bold tracking-tight">Dr. Paradkar's Ortho Cure</span>
     </a>
     <nav class="hidden md:flex gap-8 items-center">
         <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="../index.html">Home</a>
         <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="../about/index.html">About</a>
-        <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="../services/index.html">Services</a>
+        <div class="relative group">
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors flex items-center gap-1" href="../services/index.html">
+          Services
+          <span class="material-symbols-outlined text-sm transition-transform duration-200 group-hover:rotate-180">keyboard_arrow_down</span>
+        </a>
+        <!-- Dropdown Menu -->
+        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[480px] bg-surface-container-lowest border border-surface-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-4 grid grid-cols-2 gap-x-6 gap-y-2 text-left">
+          <!-- Spine & Epidural (Left Column) -->
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-bold text-primary tracking-wider uppercase border-b border-surface-border pb-1">Spine & Pain Relief</span>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../lumbar-epidural-injection/index.html">Lumbar Epidural</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../caudal-epidural-injections/index.html">Caudal Epidural</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../facet-joints-intra-articular-injections/index.html">Facet Joint Injections</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../sacro-illiac-joint-injections/index.html">SI Joint Injections</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../selective-nerve-root-blocks/index.html">Nerve Root Blocks</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../trigger-points/index.html">Trigger Points</a>
+          </div>
+          <!-- Upper & Lower Extremities (Right Column) -->
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-bold text-primary tracking-wider uppercase border-b border-surface-border pb-1">Joints & Extremities</span>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../intra-articular-injections/index.html">Intra-articular Injections</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../visco-durolene-synvisc-monovisc-prp-injections/index.html">Visco & PRP Injections</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../tennis-elbow/index.html">Tennis Elbow</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../golfers-elbow/index.html">Golfers' Elbow</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../trigger-finger/index.html">Trigger Finger</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../frozen-shoulder/index.html">Frozen Shoulder</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../rotator-cuff-tendinopathy/index.html">Rotator Cuff</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../plantar-fasciitis/index.html">Plantar Fasciitis</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../carpal-tunnel-syndrome/index.html">Carpal Tunnel</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../plaster-application/index.html">Plaster / Splints / Casts</a>
+          </div>
+        </div>
+      </div>
         <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="../gallery/index.html">Gallery</a>
         <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="../contact/index.html">Contact</a>
     </nav>
     <a href="../contact/index.html" class="hidden md:flex bg-tertiary text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full hover:bg-tertiary-container transition-colors shadow-md">
         Book Now
     </a>
-    <button class="md:hidden text-primary" onclick="window.location.href='../contact/index.html'">
+    <button class="md:hidden text-primary" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
         <span class="material-symbols-outlined text-3xl">menu</span>
     </button>
   </header>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-50 bg-surface-container-lowest flex flex-col pt-20 px-6 gap-6">
+      <button class="absolute top-4 right-6 text-primary" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+          <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+      <a class="font-headline-md text-primary" href="../index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+      <a class="font-headline-md text-primary" href="../about/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+      <a class="font-headline-md text-primary" href="../services/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+      <a class="font-headline-md text-primary" href="../gallery/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Gallery</a>
+      <a class="font-headline-md text-primary" href="../contact/index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+  </div>
 
   <!-- Page Content Placeholder -->
   <main id="primary" class="site-main">
@@ -156,9 +200,9 @@
       </div>
     </div>
     
-    <div class="section container">
-      <div class="grid grid-2">
-        <div class="service-details-column">
+    <div class="section container mx-auto px-margin-mobile md:px-margin-desktop py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="service-details-column lg:col-span-7 order-2 lg:order-1">
           <h2 style="margin-top: 0; font-size: 1.75rem; margin-bottom: 20px;">Condition & Treatment Overview</h2>
           <p class="mb-4 text-on-surface-variant text-base leading-relaxed">Elbow pain caused by repetitive movements can make daily tasks like lifting, gripping, or even typing difficult. Tennis Golfers' Elbow Treatment  offers an effective solution to reduce pain and restore strength in the affected area. At Dr. Paradkar’s Ortho Cure and Pain Relief Clinic, we provide advanced Tennis Golfers' Elbow Treatment  designed to treat both tennis elbow and golfer’s elbow without surgery.</p>
       <p class="mb-4 text-on-surface-variant text-base leading-relaxed">These conditions develop due to overuse of muscles and tendons in the forearm and can worsen if left untreated. With the guidance of a skilled Non Surgical Orthopedic Doctor , patients receive accurate diagnosis and targeted care. Our approach to Pain Management  ensures faster recovery and long-lasting relief.</p>
@@ -174,7 +218,7 @@
 
         </div>
         
-        <div class="service-media-column" style="display: flex; flex-direction: column; gap: 30px;">
+        <div class="service-media-column lg:col-span-5 order-1 lg:order-2" style="display: flex; flex-direction: column; gap: 30px;">
     
           <div class="card" style="padding: 15px;">
             <h3 style="margin-top: 0; font-size: 1.25rem; margin-bottom: 15px;"><i class="fas fa-video" style="color: var(--color-accent); margin-right: 8px;"></i>Condition Video</h3>
@@ -200,64 +244,46 @@
   </main>
 
   <!-- Shared Premium Footer -->
-  <footer class="clinic-footer">
-    <div class="container footer-grid">
-      <div class="footer-info" style="display: flex; flex-direction: column; gap: 1rem;">
-        <img src="../wp-content/uploads/2025/09/Paradkar-1.jpg" alt="Dr. Paradkar Clinic Logo" style="max-width: 280px; height: auto; border-radius: 4px;" />
-        <p class="footer-description" style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #cbd5e1;">Dr. Parag C Paradkar is an Internationally Trained Orthopedic doctor and Orthopedic Pain Management Specialist with 15+ years of global patient care experience, having successful treated more than 25000 patients in INDIA, OMAN & CANADA.</p>
-        <p style="margin-top: 10px; font-size: 13px; color: #cbd5e1;">© 2026 Dr. Paradkar’s Ortho Cure. All rights reserved. Precision Care in Bavdhan, Kothrud, Satara &amp; Lonand. | Powered by <a href="https://kaalvion.com" target="_blank" style="display: inline-block; vertical-align: middle;"><img src="../wp-content/uploads/2025/09/kaalvion_logo.png" alt="Kaalvion" style="height: 16px; width: auto; vertical-align: middle; margin-left: 4px;" /></a></p>
+  <footer class="w-full py-12 px-gutter bg-surface-container-highest md:pb-12 pb-24 border-t border-surface-border">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
+      <div class="md:col-span-4 flex flex-col gap-4">
+        <img src="../wp-content/uploads/2025/09/Paradkar-1.png" alt="Dr. Paradkar Clinic Logo" class="max-w-[280px] h-auto rounded" />
+        <p class="font-caption text-caption text-on-surface-variant mt-2 max-w-sm">
+          Dr. Parag C Paradkar is an Internationally Trained Orthopedic doctor and Orthopedic Pain Management Specialist with 15+ years of global patient care experience, having successful treated more than 25000 patients in INDIA, OMAN &amp; CANADA.
+        </p>
       </div>
-      
-      <div>
-        <h3 class="footer-heading">Useful Links</h3>
-        <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
-          <li><a href="../index.html" style="color: #cbd5e1; text-decoration: none;">Home</a></li>
-          <li><a href="../about/index.html" style="color: #cbd5e1; text-decoration: none;">About Us</a></li>
-          <li><a href="../services/index.html" style="color: #cbd5e1; text-decoration: none;">Services</a></li>
-          <li><a href="../contact/index.html" style="color: #cbd5e1; text-decoration: none;">Contact Us</a></li>
-        </ul>
+      <div class="md:col-span-4 flex flex-col gap-4">
+        <h5 class="font-label-md text-label-md text-primary uppercase tracking-wider font-bold">Useful Links</h5>
+        <nav class="flex flex-col gap-2">
+          <a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="../index.html">Home</a>
+          <a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="../about/index.html">About Us</a>
+          <a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="../services/index.html">Services</a>
+          <a class="font-caption text-caption text-on-surface-variant hover:text-primary transition-colors" href="../contact/index.html">Contact Us</a>
+        </nav>
       </div>
-      
-      <div>
-        <h3 class="footer-heading">Contact Us</h3>
-        <div class="footer-contact-item" style="margin-bottom: 15px; display: flex; gap: 10px;">
-          <span class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></span>
-          <div class="footer-contact-details">
-            <span class="footer-contact-title" style="font-weight: bold; color: white;">Bavdhan Clinic:</span><br/>
-            Sushila Rowhouse, Tri Murti Chowk,<br/>
-            Behind Amrale Dairy, Near Maratha Mandir,<br/>
-            Bavdhan, Pune, Maharashtra 411021
+      <div class="md:col-span-4 flex flex-col gap-4">
+        <h5 class="font-label-md text-label-md text-primary uppercase tracking-wider font-bold">Contact Us</h5>
+        <div class="flex flex-col gap-4 font-caption text-caption text-on-surface-variant">
+          <div>
+            <p class="font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Bavdhan Clinic:</p>
+            <p class="mt-1">Sushila Rowhouse, Tri Murti Chowk, Behind Amrale Dairy, Near Maratha Mandir, Bavdhan, Pune, Maharashtra 411021</p>
           </div>
-        </div>
-        <div class="footer-contact-item" style="margin-bottom: 15px; display: flex; gap: 10px;">
-          <span class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></span>
-          <div class="footer-contact-details">
-            <span class="footer-contact-title" style="font-weight: bold; color: white;">Kothrud Clinic:</span><br/>
-            Kumbare Township, Ground,<br/>
-            Sangeetkar Shrikant Thakare Rd, Near Ashish Garden,<br/>
-            Maurya Vihar, Kothrud, Pune, Maharashtra 411038
+          <div>
+            <p class="font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Kothrud Clinic:</p>
+            <p class="mt-1">Kumbare Township, Ground, Sangeetkar Shrikant Thakare Rd, Near Ashish Garden, Maurya Vihar, Kothrud, Pune, Maharashtra 411038</p>
           </div>
-        </div>
-        <div class="footer-contact-item" style="margin-bottom: 15px; display: flex; gap: 10px;">
-          <span class="footer-contact-icon"><i class="fas fa-phone-alt"></i></span>
-          <div class="footer-contact-details">
-            <span class="footer-contact-title" style="font-weight: bold; color: white;">Phone Call / Booking:</span><br/>
-            8237073397 - Bavdhan<br/>
-            9356576087 - Kothrud
-          </div>
-        </div>
-        <div class="footer-contact-item" style="display: flex; gap: 10px;">
-          <span class="footer-contact-icon"><i class="fas fa-envelope"></i></span>
-          <div class="footer-contact-details">
-            <span class="footer-contact-title" style="font-weight: bold; color: white;">Email Address:</span><br/>
-            paragortho81@gmail.com
+          <div>
+            <p class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">phone</span> <a href="tel:8237073397" class="hover:text-primary">8237073397 - Bavdhan</a> / <a href="tel:9356576087" class="hover:text-primary">9356576087 - Kothrud</a></p>
+            <p class="flex items-center gap-2 mt-1"><span class="material-symbols-outlined text-sm text-primary">email</span> paragortho81@gmail.com</p>
           </div>
         </div>
       </div>
     </div>
-    
-    <div class="footer-bottom">
-      Dr. Paradkar’s Ortho Cure & Pain Relief Clinic - Modern Design Enhancement
+    <div class="max-w-7xl mx-auto border-t border-surface-border pt-6 text-center md:text-left">
+      <p class="font-caption text-caption text-on-surface-variant flex items-center justify-center md:justify-start gap-1 flex-wrap">
+        <span>© 2026 Dr. Paradkar’s Ortho Cure. All rights reserved. Precision Care in Bavdhan, Kothrud, Satara &amp; Lonand. | Powered by</span>
+        <a href="https://kaalvion.com" target="_blank" class="inline-block align-middle"><img src="../wp-content/uploads/2025/09/kaalvion_logo.png" alt="Kaalvion" class="h-4 w-auto object-contain inline-block align-middle" /></a>
+      </p>
     </div>
   </footer>
 

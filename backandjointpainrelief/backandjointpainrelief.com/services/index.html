@@ -120,13 +120,45 @@
 <!-- TopAppBar -->
 <header class="sticky top-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface-container-lowest/80 backdrop-blur-md border-b border-surface-border">
     <a href="../index.html" class="flex items-center gap-3">
-        <img src="../wp-content/uploads/2025/09/Paradkar-1.jpg" alt="Logo" class="h-10 w-auto object-contain" />
+        <img src="../wp-content/uploads/2025/09/Paradkar-1.png" alt="Logo" class="h-20 w-auto object-contain" />
         <span class="font-display-lg-mobile text-primary font-bold tracking-tight">Dr. Paradkar's Ortho Cure</span>
     </a>
     <nav class="hidden md:flex gap-8 items-center">
         <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="../index.html">Home</a>
         <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="../about/index.html">About</a>
-        <a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="index.html">Services</a>
+        <div class="relative group">
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors flex items-center gap-1" href="../services/index.html">
+          Services
+          <span class="material-symbols-outlined text-sm transition-transform duration-200 group-hover:rotate-180">keyboard_arrow_down</span>
+        </a>
+        <!-- Dropdown Menu -->
+        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[480px] bg-surface-container-lowest border border-surface-border rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-4 grid grid-cols-2 gap-x-6 gap-y-2 text-left">
+          <!-- Spine & Epidural (Left Column) -->
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-bold text-primary tracking-wider uppercase border-b border-surface-border pb-1">Spine & Pain Relief</span>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../lumbar-epidural-injection/index.html">Lumbar Epidural</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../caudal-epidural-injections/index.html">Caudal Epidural</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../facet-joints-intra-articular-injections/index.html">Facet Joint Injections</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../sacro-illiac-joint-injections/index.html">SI Joint Injections</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../selective-nerve-root-blocks/index.html">Nerve Root Blocks</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../trigger-points/index.html">Trigger Points</a>
+          </div>
+          <!-- Upper & Lower Extremities (Right Column) -->
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-bold text-primary tracking-wider uppercase border-b border-surface-border pb-1">Joints & Extremities</span>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../intra-articular-injections/index.html">Intra-articular Injections</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../visco-durolene-synvisc-monovisc-prp-injections/index.html">Visco & PRP Injections</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../tennis-elbow/index.html">Tennis Elbow</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../golfers-elbow/index.html">Golfers' Elbow</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../trigger-finger/index.html">Trigger Finger</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../frozen-shoulder/index.html">Frozen Shoulder</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../rotator-cuff-tendinopathy/index.html">Rotator Cuff</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../plantar-fasciitis/index.html">Plantar Fasciitis</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../carpal-tunnel-syndrome/index.html">Carpal Tunnel</a>
+            <a class="text-xs text-on-surface-variant hover:text-primary transition-colors py-0.5" href="../plaster-application/index.html">Plaster / Splints / Casts</a>
+          </div>
+        </div>
+      </div>
         <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="../gallery/index.html">Gallery</a>
         <a class="font-label-md text-label-md text-on-surface-variant hover:text-tertiary transition-colors" href="../contact/index.html">Contact</a>
     </nav>
@@ -469,30 +501,11 @@
 </main>
 
 <!-- BottomNavBar (Mobile Only) -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-lowest shadow-[0_-4px_20px_rgba(0,0,0,0.05)] border-t border-surface-border md:hidden rounded-t-xl">
-    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 w-16" href="../index.html">
-        <span class="material-symbols-outlined text-2xl">home</span>
-        <span class="font-caption text-caption mt-1">Home</span>
-    </a>
-    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 w-16" href="../about/index.html">
-        <span class="material-symbols-outlined text-2xl">person</span>
-        <span class="font-caption text-caption mt-1">About</span>
-    </a>
-    <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90 duration-200 w-20" href="index.html">
-        <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">medical_information</span>
-        <span class="font-caption text-caption font-bold mt-1">Services</span>
-    </a>
-    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 w-16" href="../contact/index.html">
-        <span class="material-symbols-outlined text-2xl">location_on</span>
-        <span class="font-caption text-caption mt-1">Contact</span>
-    </a>
-</nav>
-
 <!-- Footer -->
 <footer class="w-full py-12 px-gutter bg-surface-container-highest md:pb-12 pb-24 border-t border-surface-border">
 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
 <div class="md:col-span-4 flex flex-col gap-4">
-<img src="../wp-content/uploads/2025/09/Paradkar-1.jpg" alt="Dr. Paradkar Clinic Logo" class="max-w-[280px] h-auto rounded" />
+<img src="../wp-content/uploads/2025/09/Paradkar-1.png" alt="Dr. Paradkar Clinic Logo" class="max-w-[280px] h-auto rounded" />
 <p class="font-caption text-caption text-on-surface-variant mt-2 max-w-sm">
                     Dr. Parag C Paradkar is an Internationally Trained Orthopedic doctor and Orthopedic Pain Management Specialist with 15+ years of global patient care experience, having successful treated more than 25000 patients in INDIA, OMAN &amp; CANADA.
                 </p>
