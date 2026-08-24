@@ -181,7 +181,7 @@ def rebuild_service_page(title, paragraphs, images, videos, prefix):
             <h3 style="color: white; margin-top: 0;"><i class="fas fa-calendar-check" style="color: var(--color-accent-light); margin-right: 8px;"></i>Schedule an Appointment</h3>
             <p style="color: #cbd5e0; font-size: 14px; margin-bottom: 20px;">Get back to living pain-free. Book your consult session at our Bavdhan or Kothrud clinics.</p>
             <div style="display: flex; flex-direction: column; gap: 12px;">
-              <a href="{prefix}contact/index.html" class="btn btn-primary" style="width: 100%; text-align: center;">Book Consultation Now</a>
+              <a href="{prefix}contact/index.html" class="btn btn-primary" style="width: 100%; text-align: center;">Enquiry</a>
               <div style="font-size: 13px; color: #cbd5e0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;">
                 <i class="fas fa-phone-alt"></i> Call: 8237073397 / 9356576087
               </div>
