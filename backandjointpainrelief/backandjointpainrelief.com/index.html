@@ -202,6 +202,27 @@
             width: max-content;
             animation: marquee 25s linear infinite;
         }
+        @keyframes marquee-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-gallery-left {
+            display: flex;
+            width: max-content;
+            animation: marquee-left 40s linear infinite;
+        }
+        .animate-gallery-right {
+            display: flex;
+            width: max-content;
+            animation: marquee-right 40s linear infinite;
+        }
+        .animate-gallery-left:hover, .animate-gallery-right:hover {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-lg antialiased pb-20 md:pb-0">
@@ -460,6 +481,143 @@
 </div>
 </div>
 </div>
+</section>
+
+<section class="py-12 bg-background border-t border-surface-border">
+    <div class="max-w-7xl mx-auto px-gutter">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Gallery</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">A glimpse into our state-of-the-art clinic, advanced procedures, and patient success moments.</p>
+            </div>
+        </div>
+        
+        <div class="relative group">
+            <!-- Previous Button -->
+            <button onclick="prevGallery()" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary hover:text-tertiary w-12 h-12 rounded-full shadow-md flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 -ml-6 border border-surface-border">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            
+            <div class="relative overflow-hidden w-full py-4 px-1">
+                <div id="gallery-track" class="flex transition-transform duration-500 ease-in-out gap-6" style="transform: translateX(0px);">
+                    <!-- Card 1 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1XxyIbx5O70YYPHdokIszGAH_p6uL0JZKiGCVlfyRRkTQLXJ6V9AfaDyusHdm0D2nvwtUz00ZD0BdYkGi0VPrjwDKhREDv8dGw0qHIyu6goQOBHOS5ehpvtHfZBIrTsW2R3ixq83qlE-EimRKxamOFkcYZc33pTchct9VH4KWFgKIt2_bEWcAqGJkzkPNCcozN5bIiGnXaxTE_zXRbP4Hw0Oz0FgM0Ejx3iwBgN0bmazo1DONa8LU_9-Kc" />
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1W7ErGtcdatHSByPv_I3d7hxmR_toIeFJkeO3T3Jzb7-cR2hPks4SPerWq2Dcu561e3z_ceH5YbNV3eZny0Ekyb1RgDF-ny7HrT88k3kcP_Sy-zp8aHsmOjFTM-3g4TjDeh4RgL3ENJ27M3TdByNPND5o-y4tcSIorxXCYSD7IUqxKMJGBFe6N5Vo5w5HG710nQL_2fqlCMN8Ny-KtkQq8nRo1QFJJi04wad-jDhh4nML3Pj1vGjS3jBphW" />
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1Wo9jK2vUOxDp_W3miZwgRoME0mQyGKaIDlEekmUtEGibHSRMC9nOWEin-k7keRIfUnvCK0YuKkSPwZqPmkRk-PHkjtOto3qyLTHg0_2xDSe2bnqKeSU4vFbX5f6hwRHYe2PqeBftnsTmBRVxIWd8HvZ8bZy4mv-IAHZq-i8llnLuOvd1cB1LytySx6SCIlKDTaYNW2FI-ROSQoPd8d-KJ3Ry6tvk_Zhrn6LhWD4FShxAejnPxiIJFxWA2_" />
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1XLQXAIo-z82n0d9Hfc189iquYCa-PmsmHUf08o9Cd5A8vDYk3vTcofIt4uIZTDfdNABPJAxayxfB8lgKquQ3NnQv7-J_fcYasBDaeQCegEZkXsW_jJMUQxrjxfFP9-3xYTenpMH3Pqrs8Ha8VNNwWJFRnfB3ETeeU8ncwkT4mIRBvutjCIKYJRWEH8Cm2lo42grxsdVoNMU8ZNUE1xYfZPWS8JxF4fBA7lJashftyRn0Ufp7R5KgdhuZmm" />
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1XUR_4BGCklaU2jg9PlLzdX3mbDlOSVEDGbBEFSR5WU-DSq4CZW4h0zJlJF-Vl5NJmPBzySTsKDAvC09zoJ-BBpv5nHcgDahtyDaJvbwbPmZTOug4ExRun34wpZO9VvwUPYXgI7VnNDIhqnoNgndL_GPxrEA-wU1QAUQyt2pESvD2zl-VRh_5O4xaNtzY1-GPhBL6IJvdQ7LpmzCkIprNoMxhbQQdWROsg0soQLYwUoGR50__GC3uWuvIge" />
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1UTYYu5n350VA-YC9kK4zKRdMMeCuU0Ba0-HLNn0uXak2neZr-mDLjU7P0Ucmky3gPrl2-bg0Pw6wweuyhSZ6Z_LUC3_YidJ0Nws9q8qeI4qw-poCt_ye7MvAE-7idoWZM54XBmhGhcmSTHuRhbEy4D1qAzdMzJjMRse_1n-BiPGkhQZpAW_WnwmtFXO1coe1ofVrD-6wwU1xUmuv3_dnKEYdteL0T1DAgoOpO1JeaiWc_XAObXO6a_dPz2" />
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1UlPSBeVTWv1RKMDWunw1bLggCfNmgoFN6bZWanJQnkx5HNN110R2J_fvQZIH_3qTFR5RfLFVEN27UH8dxqvrgz83sYKM2oAbOhYu0uuJ0ZkH4LVh-J1pYKl1Lq5Cs8hdUm1O6kvoKLHNQJfaBrm_GFKiC0Bo_jD1ZcSwmfkYt3-IvjLbvK_ayGtwUFnQWoFKBtIp06tx1hA2WclaRa_X9Rj7bPMk_EgoyPdmGBzf5iBsW42w5O_VOCxzU4" />
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1Wc9_Xq6pgkL3SKyFVTVKMmAr-ZyuLvDelvxYxAD8EIvvy_rdKbsWZhDDQCwE7mj9CQmdk3HuCks2_VeceuUQr8JKB8rI5Q8uF1WVpJyVTaDFIz2zFY7yNVaSTuEe3etvOzodRiOEWS9EeSBfPLQjSj-Xt8IeS-0eVs7cw7u4rySZ14gXekD-KS0bnHBeeX0_loLu6g7FISqjsv-JhfEate-o6I75nDmOe7OWApPLxZKdewAh6TDLWikLRQ" />
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Next Button -->
+            <button onclick="nextGallery()" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary hover:text-tertiary w-12 h-12 rounded-full shadow-md flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 -mr-6 border border-surface-border">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </div>
+        
+        
+        <!-- Second Row Carousel (Carousel Effect) -->
+        <div class="relative group mt-8">
+            <!-- Previous Button -->
+            <button onclick="prevGallery2()" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary hover:text-tertiary w-12 h-12 rounded-full shadow-md flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 -ml-6 border border-surface-border">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            
+            <div class="relative overflow-hidden w-full py-4 px-1">
+                <div id="gallery-track-2" class="flex transition-transform duration-500 ease-in-out gap-6" style="transform: translateX(0px);">
+                    <!-- Card 1 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1XUR_4BGCklaU2jg9PlLzdX3mbDlOSVEDGbBEFSR5WU-DSq4CZW4h0zJlJF-Vl5NJmPBzySTsKDAvC09zoJ-BBpv5nHcgDahtyDaJvbwbPmZTOug4ExRun34wpZO9VvwUPYXgI7VnNDIhqnoNgndL_GPxrEA-wU1QAUQyt2pESvD2zl-VRh_5O4xaNtzY1-GPhBL6IJvdQ7LpmzCkIprNoMxhbQQdWROsg0soQLYwUoGR50__GC3uWuvIge" />
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1UTYYu5n350VA-YC9kK4zKRdMMeCuU0Ba0-HLNn0uXak2neZr-mDLjU7P0Ucmky3gPrl2-bg0Pw6wweuyhSZ6Z_LUC3_YidJ0Nws9q8qeI4qw-poCt_ye7MvAE-7idoWZM54XBmhGhcmSTHuRhbEy4D1qAzdMzJjMRse_1n-BiPGkhQZpAW_WnwmtFXO1coe1ofVrD-6wwU1xUmuv3_dnKEYdteL0T1DAgoOpO1JeaiWc_XAObXO6a_dPz2" />
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1UlPSBeVTWv1RKMDWunw1bLggCfNmgoFN6bZWanJQnkx5HNN110R2J_fvQZIH_3qTFR5RfLFVEN27UH8dxqvrgz83sYKM2oAbOhYu0uuJ0ZkH4LVh-J1pYKl1Lq5Cs8hdUm1O6kvoKLHNQJfaBrm_GFKiC0Bo_jD1ZcSwmfkYt3-IvjLbvK_ayGtwUFnQWoFKBtIp06tx1hA2WclaRa_X9Rj7bPMk_EgoyPdmGBzf5iBsW42w5O_VOCxzU4" />
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1Wc9_Xq6pgkL3SKyFVTVKMmAr-ZyuLvDelvxYxAD8EIvvy_rdKbsWZhDDQCwE7mj9CQmdk3HuCks2_VeceuUQr8JKB8rI5Q8uF1WVpJyVTaDFIz2zFY7yNVaSTuEe3etvOzodRiOEWS9EeSBfPLQjSj-Xt8IeS-0eVs7cw7u4rySZ14gXekD-KS0bnHBeeX0_loLu6g7FISqjsv-JhfEate-o6I75nDmOe7OWApPLxZKdewAh6TDLWikLRQ" />
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1UrCrCNwH2wmx2C9zspTg9Xe6istz_xzVSAf2snT2Ghbma0IuyvIEpBofJf4pPetw3ZoQ1N7vcx3fNsK7Grg-sw83oYuGXg0Lv1P14Tirr7cbBSuO7MVDNiwnUP8milyRnBIVayhp0srnUJMqk6MYxfScUoDzJjpYocuj9vSir9Ion5AyIEEE7-S_Td075VSbruGuXWTwHEdOqSedQEapYFNDYRcux1pSTcdagPuqmWmXhaSLJnunP_QG8j" />
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1WYLC5bYoM1mRwhbFxQTIpqOHnXKhKOtEdwP4UtR-Ge10t3ZTS_mtMbUTYf1wnelbX8nSEfAcCYgZ9-_KeDD2dgTNYS42ynBjL0Lvc8-nU3u2xzqJ2vIj1bz3O5iRMwPlPJ2pC0oRsWuxElhNkkeGCmPVpMSx3eWYNnzrD6NzhiLfrrIeWsGb5RKpySEiNPz4tREmh6Fm7_y592tWCAQUHGnaPLDOw2zlWMlFmHMOetsumObR9RuB5x69CH" />
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1VU6DtY8D1PXT-rWiP1z762nYyOYh25E8IGm3u1OnaNDjSTps17jlrTfyqZvUvNtcBnZ_djFGD54gJpTmZGI440Fq6aVGB7xhtYAkkT-15Qw8SwYTiqH_0sy_2t6qOKZAfiFVSJ9ubF70HbASg_Q1jWTIt5vc4QNnt-je2q_imvMVMqDUGL0OaAIrNhfGUOQDYsnhT5knJq0vtQY9YFpmARl0x-GcTw2QXlJIQHo1FRXCVOKuXnAsetYlzX" />
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="flex-shrink-0 w-full md:w-[calc(33.333%-16px)] h-64 rounded-2xl overflow-hidden shadow-sm border border-surface-border hover:shadow-md transition-shadow">
+                        <img class="w-full h-full object-cover" alt="Dr. Paradkar Clinic" src="https://lh3.googleusercontent.com/aida/AEtjO1Wo9jK2vUOxDp_W3miZwgRoME0mQyGKaIDlEekmUtEGibHSRMC9nOWEin-k7keRIfUnvCK0YuKkSPwZqPmkRk-PHkjtOto3qyLTHg0_2xDSe2bnqKeSU4vFbX5f6hwRHYe2PqeBftnsTmBRVxIWd8HvZ8bZy4mv-IAHZq-i8llnLuOvd1cB1LytySx6SCIlKDTaYNW2FI-ROSQoPd8d-KJ3Ry6tvk_Zhrn6LhWD4FShxAejnPxiIJFxWA2_" />
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Next Button -->
+            <button onclick="nextGallery2()" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary hover:text-tertiary w-12 h-12 rounded-full shadow-md flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 -mr-6 border border-surface-border">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </div>
+        
+        <!-- Indicator Dots Row 1 -->
+        <div class="flex justify-center gap-2 mt-4" id="gallery-dots">
+            <button onclick="goToGallery(0)" class="gallery-dot w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery(1)" class="gallery-dot w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery(2)" class="gallery-dot w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery(3)" class="gallery-dot w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery(4)" class="gallery-dot w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery(5)" class="gallery-dot w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+        </div>
+
+        <!-- Indicator Dots Row 2 -->
+        <div class="flex justify-center gap-2 mt-2" id="gallery-dots-2">
+            <button onclick="goToGallery2(0)" class="gallery-dot-2 w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery2(1)" class="gallery-dot-2 w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery2(2)" class="gallery-dot-2 w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery2(3)" class="gallery-dot-2 w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery2(4)" class="gallery-dot-2 w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+            <button onclick="goToGallery2(5)" class="gallery-dot-2 w-2 h-2 rounded-full bg-primary/20 transition-all"></button>
+        </div>
+        
+        <div class="flex justify-center mt-10">
+            <a href="gallery/index.html" class="inline-block bg-tertiary text-on-tertiary font-label-md text-label-md px-8 py-3.5 rounded-full hover:bg-tertiary-container transition-all shadow-md">
+                View More
+            </a>
+        </div>
+    </div>
 </section>
 </main>
 <!-- Footer -->
@@ -772,6 +930,138 @@
     docSlideIndex = nextIndex;
   }
 
+  let galleryIndex = 0;
+  let galleryInterval = null;
+
+  function updateGallerySlider(auto = false) {
+    const track = document.getElementById('gallery-track');
+    if (!track) return;
+    const visibleCards = window.innerWidth >= 768 ? 3 : 1;
+    const maxIndex = 8 - visibleCards;
+    
+    if (auto) {
+      galleryIndex++;
+    }
+    
+    if (galleryIndex > maxIndex) {
+      galleryIndex = 0;
+    } else if (galleryIndex < 0) {
+      galleryIndex = maxIndex;
+    }
+    
+    if (visibleCards === 3) {
+      track.style.transform = `translateX(calc(-${galleryIndex} * (33.333% + 8px)))`;
+    } else {
+      track.style.transform = `translateX(calc(-${galleryIndex} * (100% + 24px)))`;
+    }
+
+    // Update dots visibility based on responsive maxIndex
+    const dots = document.querySelectorAll('.gallery-dot');
+    dots.forEach((dot, idx) => {
+      if (idx > maxIndex) {
+        dot.style.display = 'none';
+      } else {
+        dot.style.display = 'inline-block';
+        if (idx === galleryIndex) {
+          dot.classList.remove('bg-primary/20');
+          dot.classList.add('bg-primary', 'scale-125');
+        } else {
+          dot.classList.remove('bg-primary', 'scale-125');
+          dot.classList.add('bg-primary/20');
+        }
+      }
+    });
+  }
+
+  function nextGallery() {
+    resetGalleryInterval();
+    galleryIndex++;
+    updateGallerySlider(false);
+  }
+
+  function prevGallery() {
+    resetGalleryInterval();
+    galleryIndex--;
+    updateGallerySlider(false);
+  }
+
+  function goToGallery(idx) {
+    resetGalleryInterval();
+    galleryIndex = idx;
+    updateGallerySlider(false);
+  }
+
+  function resetGalleryInterval() {
+    clearInterval(galleryInterval);
+    galleryInterval = setInterval(() => { updateGallerySlider(true); }, 4500);
+  }
+
+  let galleryIndex2 = 0;
+  let galleryInterval2 = null;
+
+  function updateGallerySlider2(auto = false) {
+    const track = document.getElementById('gallery-track-2');
+    if (!track) return;
+    const visibleCards = window.innerWidth >= 768 ? 3 : 1;
+    const maxIndex = 8 - visibleCards;
+    
+    if (auto) {
+      galleryIndex2--;
+    }
+    
+    if (galleryIndex2 > maxIndex) {
+      galleryIndex2 = 0;
+    } else if (galleryIndex2 < 0) {
+      galleryIndex2 = maxIndex;
+    }
+    
+    if (visibleCards === 3) {
+      track.style.transform = `translateX(calc(-${galleryIndex2} * (33.333% + 8px)))`;
+    } else {
+      track.style.transform = `translateX(calc(-${galleryIndex2} * (100% + 24px)))`;
+    }
+
+    // Update dots visibility based on responsive maxIndex
+    const dots = document.querySelectorAll('.gallery-dot-2');
+    dots.forEach((dot, idx) => {
+      if (idx > maxIndex) {
+        dot.style.display = 'none';
+      } else {
+        dot.style.display = 'inline-block';
+        if (idx === galleryIndex2) {
+          dot.classList.remove('bg-primary/20');
+          dot.classList.add('bg-primary', 'scale-125');
+        } else {
+          dot.classList.remove('bg-primary', 'scale-125');
+          dot.classList.add('bg-primary/20');
+        }
+      }
+    });
+  }
+
+  function nextGallery2() {
+    resetGalleryInterval2();
+    galleryIndex2++;
+    updateGallerySlider2(false);
+  }
+
+  function prevGallery2() {
+    resetGalleryInterval2();
+    galleryIndex2--;
+    updateGallerySlider2(false);
+  }
+
+  function goToGallery2(idx) {
+    resetGalleryInterval2();
+    galleryIndex2 = idx;
+    updateGallerySlider2(false);
+  }
+
+  function resetGalleryInterval2() {
+    clearInterval(galleryInterval2);
+    galleryInterval2 = setInterval(() => { updateGallerySlider2(true); }, 4500);
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -790,6 +1080,14 @@
     // Auto sliding for reviews
     resetReviewInterval();
     updateReviewSlider(false); // Highlight initial dot
+
+    // Auto sliding for gallery
+    resetGalleryInterval();
+    updateGallerySlider(false); // Highlight initial dot
+
+    // Auto sliding for gallery 2
+    resetGalleryInterval2();
+    updateGallerySlider2(false); // Highlight initial dot
     
     // Auto cycle doctor photos
     setInterval(cycleDoctorSlides, 4000);
@@ -797,6 +1095,10 @@
     window.addEventListener('resize', () => {
       reviewIndex = 0;
       updateReviewSlider(false);
+      galleryIndex = 0;
+      updateGallerySlider(false);
+      galleryIndex2 = 0;
+      updateGallerySlider2(false);
     });
   });
 </script>
